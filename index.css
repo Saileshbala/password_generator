@@ -1,4 +1,59 @@
-h1{
-    color:black;
-    background-color: red;
+body{
+
+    background-color: rgb(28, 110, 160);
+    font-style: bold;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.whole{
+
+    background-color: rgb(174, 167, 167);
+    
+    display: inline-block;
+
+    margin-top: 15%;
+    margin-left: 30%;
+    padding: 5px;
+
+    border: solid 5px;
+    /* border-color :gray; */
+    border-radius: 10px;
+
+}
+.button{
+    font-size: medium;
+    margin-left: 200px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(28, 110, 160);
+    
+}
+
+#show{
+
+    border: solid 2px;
+    text-align: center;
+    border-color: black;
+    background-color:azure;
+}
+#size{
+    font-size: large;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 10px;
+    padding-top: 5px;
+    
+    
+}
+
+input[type="checkbox"]{
+
+    
+    height: 20px;
+    width: 20px;
+    background-color: aqua;
+    border-radius: 5px;
+    margin-left: 10px;    
 }
