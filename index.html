@@ -3,11 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="password.css">
+    <title>PASSWORD GENERATOR</title>
 </head>
 <body>
-    <h1>project</h1>
-    <img src="Images/demo.jpg" alt="cart">
+
+<div class="whole">
+    
+    <div><label for="">LENGTH OF PASSWORD</label><input type="number" id="size" value="10" maxvalue="15"></div>
+    <div><label for=""> Include Upper Case</label><input  type="checkbox"  id="uppercase" checked ></div>
+    <div><label for=""> Include Lower Case</label><input type="checkbox" id="lowercase" ></div>
+    <div><label for=""> Include Numbers </label><input type="checkbox" id="number"></div>
+    <div><label for=""> Include Symbols </label><input type="checkbox" id="symbol" ></div>
+    <div><button onclick="generate()" class="button" id="button">GENERATE PASSWORD </button></div>
+    <div><p id="show" >Click Generate Password </p></div>
+
+    <script>
+
+ function generate (){
+
+   
+
+   const length = document.getElementById("size").value;
+   const uppercase = document.getElementById("uppercase").checked;
+   const lowercase =  document.getElementById("lowercase").checked;
+   const number = document.getElementById("number").checked;
+   const symbol = document.getElementById("symbol").checked;
+
+   const password= generatePassword(parseInt(length),uppercase,lowercase,number,symbol)
+
+   if (length >=16){
+    alert ("please Enter Lenght of Password From 1 To 15")
+
+   }
+
+else{
+   document.getElementById("show").innerHTML = password
+
+   document.getElementById("button").innerHTML = "DIFFERENT PASSWORD"
+
+}
+
+
+ 
+   
+
+
+
+ }
+
+            function generatePassword(length,uppercase,lowercase,number,symbol){
+
+                let characters = "";
+
+                if(uppercase){
+
+                    characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                }
+
+                if(lowercase){
+
+                        characters += 'abcdefghijklmnopqrstuvwxyz'
+                    }
+
+                    if(number){
+
+                        characters += '0123456789'
+                     }
+                     if(symbol){
+
+                         characters += '!@#$%^&*=+-\}{()'
+                    }
+
+                let passwordArray = [];
+
+                while (passwordArray.length <length) {
+
+                    let oneLetter = characters[Math.floor(Math.random()* characters.length)]
+
+                    passwordArray.push(oneLetter)
+                    
+                }
+               return passwordArray.join ( '' ); 
+
+            }
+
+
+
+
+    </script>
+
+
+</div>
 </body>
 </html>
